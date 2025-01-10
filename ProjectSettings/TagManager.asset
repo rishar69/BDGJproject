@@ -41,5 +41,20 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: background
+    uniqueID: 2429965565
+    locked: 0
+  - name: Slime Monster
+    uniqueID: 1602195827
+    locked: 0
+  - name: Player
+    uniqueID: 2348630513
+    locked: 0
+  - name: Obstacle
+    uniqueID: 4179747045
+    locked: 0
+  - name: Platform
+    uniqueID: 3482367887
+    locked: 0
   m_RenderingLayers:
   - Default

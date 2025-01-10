@@ -32,9 +32,14 @@ public class GameManager : MonoBehaviour
     {
     }
 
+    public void InstantDeath()
+    {
+        Time.timeScale = 0f;
+        gameOverUI.SetActive(true);
+    }
     public IEnumerator Dead()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(2f);
         Time.timeScale = 0f;
         gameOverUI.SetActive(true);   
     }
