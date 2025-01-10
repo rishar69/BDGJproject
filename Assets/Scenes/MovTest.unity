@@ -511,6 +511,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6004647569957467536, guid: 0b4051e8fac2fd94e8af951818f5d8a4, type: 3}
+      propertyPath: onJumpEffect
+      value: 
+      objectReference: {fileID: 8892547999091728894, guid: 6a615e3e7d43d5e41973d57c63c71180, type: 3}
+    - target: {fileID: 6004647569957467536, guid: 0b4051e8fac2fd94e8af951818f5d8a4, type: 3}
+      propertyPath: MainjumpForce
+      value: 2.5
+      objectReference: {fileID: 0}
     - target: {fileID: 6065414077699069428, guid: 0b4051e8fac2fd94e8af951818f5d8a4, type: 3}
       propertyPath: m_Name
       value: Player
