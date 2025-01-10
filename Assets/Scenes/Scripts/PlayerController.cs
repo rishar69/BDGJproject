@@ -3,7 +3,7 @@ using UnityEngine.Events;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] private float jumpForce = 10f;
+    [SerializeField] private float MainjumpForce = 10f;
     [Range(0, .3f)][SerializeField] private float movementSmoothing = .05f;
     [SerializeField] private bool airControl = false;
     [SerializeField] private LayerMask whatIsGround;
@@ -33,8 +33,13 @@ public class PlayerController : MonoBehaviour
     {
         groundChecking();
     }
-    public void Move(float move, bool jump)
+    public void Move(float move, bool jump, bool sticky)
     {
+        float ExecJumpForce = MainjumpForce;
+        if (sticky)
+        {
+            ExecJumpForce = MainjumpForce / 2;
+        }
         if (grounded || airControl)
         {
             Vector3 targetVelocity = new Vector2(move * 10f, rb2D.linearVelocity.y);
@@ -52,7 +57,7 @@ public class PlayerController : MonoBehaviour
         if (jump && grounded)
         {
             grounded = false;
-            rb2D.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
+            rb2D.AddForce(new Vector2(0f, ExecJumpForce), ForceMode2D.Impulse);
         }
     }
     private void Flip()

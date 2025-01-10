@@ -5,6 +5,7 @@ public class PlayerInput : MonoBehaviour
     public Animator animator;
     public float Speed = 40f;
     public bool jump = false;
+    public bool isSticky = false;
     float horizontalMove = 0f;
     void Awake()
     {
@@ -39,8 +40,11 @@ public class PlayerInput : MonoBehaviour
     }
     private void Execute()
     {
-        Controller.Move(horizontalMove * Time.fixedDeltaTime, jump);
+        if (isSticky)
+        {
+            horizontalMove = horizontalMove / 2;
+        }
+        Controller.Move(horizontalMove * Time.fixedDeltaTime, jump, isSticky);
         jump = false;
-        // Debug.Log(horizontalMove * Time.fixedDeltaTime + " " + crouch + " " + jump);
     }
 }
