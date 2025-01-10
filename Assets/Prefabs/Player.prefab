@@ -48,7 +48,7 @@ GameObject:
   - component: {fileID: 608555990878616881}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -113,7 +113,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1463319134, guid: 4fc49135f60b83d4c9c9591599e39660, type: 3}
+  m_Sprite: {fileID: 2037715371, guid: 4fc49135f60b83d4c9c9591599e39660, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -158,7 +158,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85cb19e15c025864196d8577a1684d01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpForce: 10
+  MainjumpForce: 10
   movementSmoothing: 0.05
   airControl: 1
   whatIsGround:
@@ -211,6 +211,7 @@ MonoBehaviour:
   animator: {fileID: 8074590951650969642}
   Speed: 40
   jump: 0
+  isSticky: 0
 --- !u!50 &4175304008645614788
 Rigidbody2D:
   serializedVersion: 5
