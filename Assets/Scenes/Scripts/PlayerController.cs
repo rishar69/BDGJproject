@@ -94,6 +94,7 @@ public class PlayerController : MonoBehaviour
                 if (!wasGrounded)
                 {
                     OnLandEvent.Invoke();
+                    Instantiate(onJumpEffect, transform.position, transform.rotation);
                 }
             }
         }

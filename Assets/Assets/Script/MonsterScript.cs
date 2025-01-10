@@ -8,6 +8,9 @@ public class MonsterScript : MonoBehaviour
     public float treshold;
     public float moveSpeed;
     private bool isInsideTrigger = false;
+    public Transform playerPosition;
+    private float distanceTreshold = 16f;
+   
     // Start is called once before the first execution of Update after the MonoBehaviour is created
 
     private void Awake()
@@ -21,8 +24,18 @@ public class MonsterScript : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {   
+    {
+        float distance = Vector2.Distance(transform.position, playerPosition.position);
+        print(distance);    
 
+        if (distance <= distanceTreshold)
+        {
+            CameraScripts.Instance.ShakeCamera(1);
+        }
+        else
+        {
+            CameraScripts.Instance.ShakeCamera(0);
+        }
         transform.position += Vector3.right * moveSpeed * Time.deltaTime;
 
         if (isInsideTrigger)
