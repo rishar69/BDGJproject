@@ -8,7 +8,6 @@ public class MonsterScript : MonoBehaviour
     public float treshold;
     public float moveSpeed;
     private bool isInsideTrigger = false;
-    private CinemachineVirtualCamera cinemachineCamera;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
 
     private void Awake()
@@ -33,7 +32,7 @@ public class MonsterScript : MonoBehaviour
 
             if (duration > treshold)
             {
-                StartCoroutine(GameManager.Instance.Dead());
+                GameManager.Instance.InstantDeath();
             }
         }
 
