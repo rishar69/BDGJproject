@@ -8,6 +8,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private bool airControl = false;
     [SerializeField] private LayerMask whatIsGround;
     [SerializeField] private Transform groundCheck;
+
+    public GameObject onJumpEffect;
     const float groundedRadius = .2f;
     private bool grounded;
     const float ceilingRadius = .2f;
@@ -58,6 +60,7 @@ public class PlayerController : MonoBehaviour
         {
             grounded = false;
             rb2D.AddForce(new Vector2(0f, ExecJumpForce), ForceMode2D.Impulse);
+            Instantiate(onJumpEffect, transform.position, transform.rotation);
         }
     }
     private void Flip()
