@@ -5,7 +5,8 @@ public class Sticky : MonoBehaviour
     [SerializeField] private AudioSource stickySound;
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Player"))
+        var playerInput = other.gameObject.GetComponent<PlayerInput>();
+        if (playerInput != null)
         {
             if (stickySound != null)
             {

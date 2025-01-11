@@ -44,8 +44,8 @@ TagManager:
   - name: background
     uniqueID: 2429965565
     locked: 0
-  - name: Slime Monster
-    uniqueID: 1602195827
+  - name: Tutorial text
+    uniqueID: 3692694471
     locked: 0
   - name: Player
     uniqueID: 2348630513
@@ -53,8 +53,17 @@ TagManager:
   - name: Obstacle
     uniqueID: 4179747045
     locked: 0
+  - name: Slime Monster
+    uniqueID: 1602195827
+    locked: 0
+  - name: monsterEye
+    uniqueID: 2280121071
+    locked: 0
   - name: Platform
     uniqueID: 3482367887
+    locked: 0
+  - name: jam Obstacle
+    uniqueID: 791359215
     locked: 0
   m_RenderingLayers:
   - Default

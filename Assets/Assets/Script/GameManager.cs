@@ -1,39 +1,19 @@
 using System.Collections;
-using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
     public GameObject gameOverUI;
-    public static GameManager Instance { get; private set; }
-    [SerializeField] private AudioSource gameOver;
-    [SerializeField] private AudioSource bgm;
+    public AudioSource gameOver;
+    public AudioSource bgm;
+    public AudioSource countdownSound;
 
-
-    private void Awake()
-    {
-
-
-        if (Instance == null)
-        {
-            Instance = this; 
-            DontDestroyOnLoad(gameObject); 
-        }
-        else
-        {
-            Debug.LogError("Duplicate GameManager found! Destroying the new one.");
-            Destroy(gameObject);
-        }
-    }
     private void Start()
     {
-
-
-    }
-
-    private void Update()
-    {
+        // Automatically handle countdown when the scene loads
+        Time.timeScale = 0f;
+        StartCoroutine(CountdownCoroutine());
     }
 
     public void InstantDeath()
@@ -43,14 +23,31 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 0f;
         gameOverUI.SetActive(true);
     }
-    public IEnumerator Dead(float timeBeforeDeath)
+
+    public void RetryGame()
     {
-        yield return new WaitForSeconds(timeBeforeDeath);
-        bgm.Stop();
-        gameOver.Play();
-        Time.timeScale = 0f;
-        gameOverUI.SetActive(true);   
+        Debug.Log("Retrying game...");
+
+        Time.timeScale = 1f;
+
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+    public void ToMainMenu()
+    {
+       
+
+        Time.timeScale = 1f;
+
+        SceneManager.LoadScene("Main-Menu");
+    }
+
+    public IEnumerator CountdownCoroutine()
+    {
+        countdownSound.Play();
+        Debug.Log("Countdown started.");
+        yield return new WaitForSecondsRealtime(3f);
+        Debug.Log("Countdown finished. Game started.");
+        Time.timeScale = 1f;
+        bgm.Play();
     }
 }
-
-

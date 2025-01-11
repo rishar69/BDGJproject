@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 2393569283335629376}
   - component: {fileID: 7068591579273489434}
   - component: {fileID: 4329790587757064177}
-  - component: {fileID: 5214491697064125631}
+  - component: {fileID: 1985193547281819629}
+  - component: {fileID: 3627768436637862102}
   m_Layer: 0
   m_Name: CinemachineCamera
   m_TagString: Untagged
@@ -28,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 4481172601768408483}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -24.07555, y: -1.3703711, z: -10}
+  m_LocalPosition: {x: -17.7, y: -1.9755566, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -59,7 +60,7 @@ MonoBehaviour:
     CustomLookAtTarget: 0
   Lens:
     FieldOfView: 60
-    OrthographicSize: 4
+    OrthographicSize: 6
     NearClipPlane: 0.3
     FarClipPlane: 1000
     Dutch: 0
@@ -92,7 +93,7 @@ MonoBehaviour:
   CameraDistance: 10
   DeadZoneDepth: 0
   Composition:
-    ScreenPosition: {x: -0.031250417, y: 0.003703624}
+    ScreenPosition: {x: -0.15, y: 0.003703624}
     DeadZone:
       Enabled: 1
       Size: {x: 0.36083317, y: 0.2770369}
@@ -105,10 +106,10 @@ MonoBehaviour:
   Damping: {x: 1, y: 1, z: 1}
   Lookahead:
     Enabled: 1
-    Time: 0.5
+    Time: 0.094
     Smoothing: 2.8
     IgnoreY: 1
---- !u!114 &5214491697064125631
+--- !u!114 &1985193547281819629
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -117,14 +118,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 4481172601768408483}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f453f694addf4275988fac205bc91968, type: 3}
+  m_Script: {fileID: 11500000, guid: 68bb026fafb42b14791938953eaace77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BoundingShape2D: {fileID: 0}
-  Damping: 0.5
-  SlowingDistance: 5
-  OversizeWindow:
-    Enabled: 0
-    MaxWindowSize: 0
-    Padding: 0
-  m_LegacyMaxWindowSize: -2
+  NoiseProfile: {fileID: 11400000, guid: 69ce8388f6785dd4c8c39915efece2f4, type: 2}
+  PivotOffset: {x: 0, y: 0, z: 0}
+  AmplitudeGain: 0
+  FrequencyGain: 1
+  m_NoiseOffsets: {x: 0, y: 0, z: 0}
+--- !u!114 &3627768436637862102
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4481172601768408483}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 163068be9d2d3524f97f7d87eebce5ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -160,7 +160,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85cb19e15c025864196d8577a1684d01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MainjumpForce: 10
+  MainjumpForce: 9.5
   movementSmoothing: 0.05
   airControl: 1
   whatIsGround:
@@ -214,7 +214,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Controller: {fileID: 6004647569957467536}
   animator: {fileID: 8074590951650969642}
-  Speed: 40
+  Speed: 35
   jump: 0
   trampo: 0
   isSticky: 0

@@ -8,11 +8,15 @@ public class PlayerInput : MonoBehaviour
     public bool Jboost = false;
     public bool isSticky = false;
     float horizontalMove = 0f;
-    void Awake()
-    {
-        Controller = GetComponent<PlayerController>();
-        animator = GetComponent<Animator>();
-    }
+ 
+     void Awake()
+        {
+            Controller = GetComponent<PlayerController>();
+            if (Controller == null) Debug.LogError("PlayerController is missing!");
+
+            animator = GetComponent<Animator>();
+            if (animator == null) Debug.LogError("Animator is missing!");
+        }
     void Update()
     {
         getInput();
