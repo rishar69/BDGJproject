@@ -9,12 +9,11 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance { get; private set; }
     [SerializeField] private AudioSource gameOver;
     [SerializeField] private AudioSource bgm;
-
+    [SerializeField] private AudioSource countdownSound;
+    [SerializeField] private GameObject countdownUI;
 
     private void Awake()
     {
-
-
         if (Instance == null)
         {
             Instance = this; 
@@ -26,16 +25,6 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
-    private void Start()
-    {
-
-
-    }
-
-    private void Update()
-    {
-    }
-
     public void InstantDeath()
     {
         bgm.Stop();
@@ -45,6 +34,7 @@ public class GameManager : MonoBehaviour
     }
     public IEnumerator Dead(float timeBeforeDeath)
     {
+        bgm.volume=0.2f;
         yield return new WaitForSeconds(timeBeforeDeath);
         bgm.Stop();
         gameOver.Play();
