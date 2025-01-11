@@ -7,8 +7,11 @@ public class Sticky : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            stickySound.Play();
-            bool isSticky = other.gameObject.GetComponent<PlayerInput>().isSticky = true;     
+            if (stickySound != null)
+            {
+                stickySound.Play();
+            }
+            bool isSticky = other.gameObject.GetComponent<PlayerInput>().isSticky = true;
         }
     }
 
