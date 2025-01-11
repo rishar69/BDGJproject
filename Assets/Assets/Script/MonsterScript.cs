@@ -1,3 +1,4 @@
+using System.Collections;
 using Unity.Cinemachine;
 using UnityEngine;
 using UnityEngine.InputSystem.Controls;
@@ -8,26 +9,30 @@ public class MonsterScript : MonoBehaviour
     public float treshold;
     public float moveSpeed;
     private bool isInsideTrigger = false;
-    public Transform playerPosition;
-    private float distanceTreshold = 16f;
-    [SerializeField] private AudioSource splat;
-   
+    public GameObject playerPosition;
+    private float distanceTreshold = 20f;
+    public AudioSource splat;
+
+    public GameObject gameManager;
+    public GameObject gameOverUI;
+    private AudioSource gameOverSound;
+    private AudioSource bgm;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
 
     private void Awake()
     {
+        bgm = gameManager.GetComponent<GameManager>().bgm;
+        gameOverSound = gameManager.GetComponent<GameManager>().gameOver;
+
     }
 
-    void Start()
-    {
-        
-    }
+   
 
     // Update is called once per frame
     void Update()
     {
-        float distance = Vector2.Distance(transform.position, playerPosition.position);
-        print(distance);    
+        float distance = Vector2.Distance(transform.position, playerPosition.transform.position);
 
         if (distance <= distanceTreshold)
         {
@@ -46,7 +51,8 @@ public class MonsterScript : MonoBehaviour
 
             if (duration > treshold)
             {
-                StartCoroutine(GameManager.Instance.Dead(0.1f));
+                playerPosition.GetComponent<PlayerInput>().Speed = 0;
+                StartCoroutine(Dead(0.1f));
             }
         }
 
@@ -64,5 +70,15 @@ public class MonsterScript : MonoBehaviour
         isInsideTrigger = false;
 
         duration = 0;
+    }
+
+    public IEnumerator Dead(float timeBeforeDeath)
+    {
+        bgm.volume = 0.2f;
+        yield return new WaitForSeconds(timeBeforeDeath);
+        bgm.Stop();
+        gameOverSound.Play();
+        Time.timeScale = 0f;
+        gameOverUI.SetActive(true);
     }
 }
