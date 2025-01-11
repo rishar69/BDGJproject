@@ -3,7 +3,6 @@ using UnityEngine.Events;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] private Cooldown cooldown;
     [SerializeField] private float MainjumpForce = 10f;
     [Range(0, .3f)][SerializeField] private float movementSmoothing = .05f;
     [SerializeField] private bool airControl = false;
