@@ -10,8 +10,10 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Transform groundCheck;
 
     public GameObject onJumpEffect;
+    public AudioSource jumpSound;
+    public AudioSource PlayerjumpSound;
     const float groundedRadius = .2f;
-    private bool grounded;
+    public bool grounded;
     const float ceilingRadius = .2f;
     private Rigidbody2D rb2D;
     private bool isFacingRight = true;
@@ -30,17 +32,18 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         OnAir();
+        groundChecking();
     }
     void FixedUpdate()
     {
-        groundChecking();
+
     }
-    public void Move(float move, bool jump, bool sticky, bool trampo)
+    public void Move(float move, bool jump, bool sticky, bool Jboost)
     {
         float ExecJumpForce = MainjumpForce;
-        if (trampo)
+        if (Jboost)
         {
-            ExecJumpForce = MainjumpForce * 1.5f;
+            ExecJumpForce = MainjumpForce * 1.75f;
         }
         if (sticky)
         {
@@ -63,8 +66,12 @@ public class PlayerController : MonoBehaviour
         if (jump && grounded)
         {
             grounded = false;
+            float jumpSpeed = rb2D.linearVelocity.y;
+            rb2D.AddForce(new Vector2(0f, -jumpSpeed), ForceMode2D.Impulse);
             rb2D.AddForce(new Vector2(0f, ExecJumpForce), ForceMode2D.Impulse);
             Instantiate(onJumpEffect, transform.position, transform.rotation);
+            jumpSound.Play();
+            PlayerjumpSound.Play();
         }
     }
     private void Flip()

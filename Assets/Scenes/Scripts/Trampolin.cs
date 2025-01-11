@@ -2,30 +2,22 @@ using UnityEngine;
 
 public class Trampolin : MonoBehaviour
 {
-    [SerializeField] private Collider2D DisableCollider;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerStay2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            if (DisableCollider != null)
-            {
-                DisableCollider.enabled = true;
-            }
+            float jumpSpeed = other.gameObject.GetComponent<Rigidbody2D>().linearVelocity.y;
+            other.gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, -jumpSpeed), ForceMode2D.Impulse);
             other.gameObject.GetComponent<PlayerInput>().jump = true;
-            other.gameObject.GetComponent<PlayerInput>().trampo = true;
+            other.gameObject.GetComponent<PlayerInput>().Jboost = true;
         }
     }
-
     private void OnTriggerExit2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            if (DisableCollider != null)
-            {
-                DisableCollider.enabled = false;
-            }
-            other.gameObject.GetComponent<PlayerInput>().trampo = false;
+            other.gameObject.GetComponent<PlayerInput>().Jboost = false;
         }
     }
 }

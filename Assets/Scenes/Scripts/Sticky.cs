@@ -8,12 +8,11 @@ public class Sticky : MonoBehaviour
         var playerInput = other.gameObject.GetComponent<PlayerInput>();
         if (playerInput != null)
         {
-            stickySound.Play();
-            playerInput.isSticky = true;
-        }
-        else
-        {
-            Debug.LogError("PlayerInput is missing on " + other.gameObject.name);
+            if (stickySound != null)
+            {
+                stickySound.Play();
+            }
+            bool isSticky = other.gameObject.GetComponent<PlayerInput>().isSticky = true;
         }
     }
 
