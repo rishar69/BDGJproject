@@ -35,9 +35,13 @@ public class PlayerController : MonoBehaviour
     {
         groundChecking();
     }
-    public void Move(float move, bool jump, bool sticky)
+    public void Move(float move, bool jump, bool sticky, bool trampo)
     {
         float ExecJumpForce = MainjumpForce;
+        if (trampo)
+        {
+            ExecJumpForce = MainjumpForce * 1.5f;
+        }
         if (sticky)
         {
             ExecJumpForce = MainjumpForce / 2;
@@ -74,7 +78,7 @@ public class PlayerController : MonoBehaviour
     {
         if (!grounded)
         {
-            if (rb2D.linearVelocity.y > 0)
+            if (rb2D.linearVelocity.y > 0.01f || rb2D.linearVelocity.y < -0.01f)
             {
                 OnJumpEvent.Invoke();
             }

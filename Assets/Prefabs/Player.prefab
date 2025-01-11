@@ -165,6 +165,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1
   groundCheck: {fileID: 6526568404076089844}
+  onJumpEffect: {fileID: 8892547999091728894, guid: 6a615e3e7d43d5e41973d57c63c71180, type: 3}
   OnLandEvent:
     m_PersistentCalls:
       m_Calls:
@@ -211,6 +212,7 @@ MonoBehaviour:
   animator: {fileID: 8074590951650969642}
   Speed: 40
   jump: 0
+  trampo: 0
   isSticky: 0
 --- !u!50 &4175304008645614788
 Rigidbody2D:
@@ -228,7 +230,7 @@ Rigidbody2D:
   m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_GravityScale: 2
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: a490dced96fb2ac468c435a3568a3647, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -237,7 +239,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!61 &608555990878616881
 BoxCollider2D:
@@ -249,7 +251,7 @@ BoxCollider2D:
   m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: a490dced96fb2ac468c435a3568a3647, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -283,5 +285,5 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1.0666667, y: 1.0666667}
+  m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
