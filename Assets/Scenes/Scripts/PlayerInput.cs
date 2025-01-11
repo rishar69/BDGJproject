@@ -5,6 +5,7 @@ public class PlayerInput : MonoBehaviour
     public Animator animator;
     public float Speed = 40f;
     public bool jump = false;
+    public bool trampo = false;
     public bool isSticky = false;
     float horizontalMove = 0f;
     void Awake()
@@ -32,7 +33,6 @@ public class PlayerInput : MonoBehaviour
     public void OnJump()
     {
         animator.SetBool("isJump", true);
-        Debug.Log("JumpingC");
     }
     public void onLanding()
     {
@@ -44,7 +44,7 @@ public class PlayerInput : MonoBehaviour
         {
             horizontalMove = horizontalMove / 2;
         }
-        Controller.Move(horizontalMove * Time.fixedDeltaTime, jump, isSticky);
+        Controller.Move(horizontalMove * Time.fixedDeltaTime, jump, isSticky, trampo);
         jump = false;
     }
 }
