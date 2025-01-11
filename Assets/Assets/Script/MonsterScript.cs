@@ -10,6 +10,7 @@ public class MonsterScript : MonoBehaviour
     private bool isInsideTrigger = false;
     public Transform playerPosition;
     private float distanceTreshold = 16f;
+    [SerializeField] private AudioSource splat;
    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
 
@@ -45,7 +46,7 @@ public class MonsterScript : MonoBehaviour
 
             if (duration > treshold)
             {
-                GameManager.Instance.InstantDeath();
+                StartCoroutine(GameManager.Instance.Dead(0.1f));
             }
         }
 
@@ -53,6 +54,7 @@ public class MonsterScript : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        splat.Play();
         isInsideTrigger = true;
         Debug.Log("Trigger enter true");
     }
