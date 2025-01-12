@@ -115,7 +115,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 2037715371, guid: 4fc49135f60b83d4c9c9591599e39660, type: 3}
+  m_Sprite: {fileID: -3236171615662214009, guid: 1c435f5e7b46b9740bed078c537deda6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -138,7 +138,7 @@ Animator:
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 3498d3bc7bb87cd42a35b77ec10b04c7, type: 2}
   m_CullingMode: 0
-  m_UpdateMode: 0
+  m_UpdateMode: 2
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
@@ -170,6 +170,7 @@ MonoBehaviour:
   onJumpEffect: {fileID: 8892547999091728894, guid: 6a615e3e7d43d5e41973d57c63c71180, type: 3}
   jumpSound: {fileID: 4497212758422520405}
   PlayerjumpSound: {fileID: 8748004944867265603}
+  grounded: 0
   OnLandEvent:
     m_PersistentCalls:
       m_Calls:
@@ -216,7 +217,7 @@ MonoBehaviour:
   animator: {fileID: 8074590951650969642}
   Speed: 35
   jump: 0
-  trampo: 0
+  Jboost: 0
   isSticky: 0
 --- !u!50 &4175304008645614788
 Rigidbody2D:
@@ -283,7 +284,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.0666667, y: 1.0666667}
+    oldSize: {x: 1.04, y: 1}
     newSize: {x: 0.16, y: 0.16}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
