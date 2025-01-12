@@ -20,9 +20,12 @@ public class DropZoneScript : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (collision.CompareTag("Player"))
+        {
         scream.Play();
         StartCoroutine(Dead(0.3f));
-        Debug.Log("Dead to dropzone");
+        Debug.Log("Dead to dropzone");    
+        }
     }
 
     

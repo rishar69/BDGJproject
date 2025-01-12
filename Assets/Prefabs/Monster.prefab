@@ -107,7 +107,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   duration: 0
   treshold: 0.8
-  moveSpeed: 6
+  moveSpeed: 6.3
   playerPosition: {fileID: 0}
   splat: {fileID: 8564998083444786355}
   gameManager: {fileID: 0}
@@ -269,15 +269,15 @@ AudioSource:
   m_Resource: {fileID: 8300000, guid: ee92da882ac8e0a449db5ce84a0fe082, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
-  m_Pitch: 1
+  m_Pitch: 1.77
   Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 5
-  MinDistance: 12.472258
-  MaxDistance: 22.186989
+  MinDistance: 15
+  MaxDistance: 30
   Pan2D: 0
   rolloffMode: 1
   BypassEffects: 0

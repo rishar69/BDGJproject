@@ -170,6 +170,7 @@ MonoBehaviour:
   onJumpEffect: {fileID: 8892547999091728894, guid: 6a615e3e7d43d5e41973d57c63c71180, type: 3}
   jumpSound: {fileID: 4497212758422520405}
   PlayerjumpSound: {fileID: 8748004944867265603}
+  grounded: 0
   OnLandEvent:
     m_PersistentCalls:
       m_Calls:
@@ -216,7 +217,7 @@ MonoBehaviour:
   animator: {fileID: 8074590951650969642}
   Speed: 35
   jump: 0
-  trampo: 0
+  Jboost: 0
   isSticky: 0
 --- !u!50 &4175304008645614788
 Rigidbody2D:
@@ -303,7 +304,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 2c5292ba5cf254919a6b9e2b18e04f49, type: 3}
   m_Resource: {fileID: 8300000, guid: 2c5292ba5cf254919a6b9e2b18e04f49, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -400,8 +401,8 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 8dbb6d439172bdc47bd13688628f0e25, type: 3}
   m_Resource: {fileID: 8300000, guid: 8dbb6d439172bdc47bd13688628f0e25, type: 3}
-  m_PlayOnAwake: 1
-  m_Volume: 1
+  m_PlayOnAwake: 0
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 0
   Mute: 0

@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour
 {
     public GameObject gameOverUI;
     public AudioSource gameOver;
+    public AudioSource gameFinishSound;
     public AudioSource bgm;
     public AudioSource countdownSound;
 
