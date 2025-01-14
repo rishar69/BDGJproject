@@ -1,12 +1,15 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MenuScript : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    public void Update()
-    {
-        
+    public void Play()
+    { 
+        SceneManager.LoadScene("Stage1");
     }
 
-   
+    public void ExitGame()
+    {
+        Application.Quit();
+    }
 }

@@ -56,5 +56,6 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "BDGJproject.sln"
+    "dotnet.defaultSolution": "BDGJproject.sln",
+    "dotnet.preferCSharpExtension": true
 }
