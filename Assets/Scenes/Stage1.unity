@@ -6190,6 +6190,10 @@ PrefabInstance:
       value: Monster
       objectReference: {fileID: 0}
     - target: {fileID: 2725712923170236047, guid: 4350298cf3c773e418e8bf9c67592d1d, type: 3}
+      propertyPath: Loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2725712923170236047, guid: 4350298cf3c773e418e8bf9c67592d1d, type: 3}
       propertyPath: m_Pitch
       value: 1.77
       objectReference: {fileID: 0}
